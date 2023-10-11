@@ -1,0 +1,26 @@
+name: Mobile Price Prediction 
+
+on:
+  push:
+    branches:
+      - master  # Modify this branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8  # Modify this version as needed
+
+
+    - name: Train ML model
+      run: |
+        python Mobile_Price_Prediction.py  
+
+  
