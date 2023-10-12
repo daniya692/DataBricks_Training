@@ -36,24 +36,4 @@ jobs:
            Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
            Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
 
-  run-plots:
-    needs: generate-plots
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download Plots Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: plots
-
-      - name: List Artifacts
-        run: |
-          ls -R
-
-      - name: Save Plots as Artifacts
-        run:
-         display Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
-         display Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.3.png
-         display Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.4.png
-
   
