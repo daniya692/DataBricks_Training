@@ -1,27 +1,37 @@
 name: Plot Github Action
-'on':
+on:
   push:
     branches:
-      - master
+      - master  
+
 jobs:
-  build:
+  analyze_data:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
-      - name: Train ML model
-        run: >
-          python
-          Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/Main.py  
-      - name: Save Plots as Artifacts
-        uses: actions/upload-artifact@v2
-        with: null
-      - name: plots
-        path: >-
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pandas openpyxl
+        pip install matplotlib
+        pip install seaborn
+        pip install -U scikit-learn
+
+    - name: Run Analysis
+      run: python Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/Main.py 
+
+    - name: Save Plots as Artifacts
+      run:
           Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
           Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.3.png
           Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.4.png
+
+  
