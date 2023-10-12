@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 #Load the dataset
-df = pd.read_csv(r"c:\Users\Hp\Downloads\50_Startups.csv")
+df = pd.read_csv("50_Startups.csv")
 df.head()
 df.shape
 
