@@ -14,13 +14,14 @@ jobs:
         with:
           python-version: 3.8
       - name: Train ML model
-        run: |
-          python Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/Main.py  
+        run: >
+          python
+          Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/Main.py  
       - name: Save Plots as Artifacts
         uses: actions/upload-artifact@v2
-        with:
-      - name: plots # The name of the artifact
-        path: 
-         Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
-         Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.3.png
-         Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.4.png
+        with: null
+      - name: plots
+        path: >-
+          Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
+          Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.3.png
+          Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.4.png
