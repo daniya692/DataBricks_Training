@@ -20,4 +20,8 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: plots # The name of the artifact
-        path: path/to/plots
+        path: 
+        Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.2.png
+        Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.3.png
+        Assignments/Daniya_Assignment_3.6_Plot_in_Github_Action/plot_test_size_0.4.png
+        
